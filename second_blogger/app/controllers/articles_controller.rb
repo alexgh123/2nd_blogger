@@ -7,6 +7,8 @@ class ArticlesController < ApplicationController
 
   def show
     @article = Article.find(params[:id])
+    @comment = Comment.new
+    @comment.article_id = @article.id
   end
   #this is a somewhat confusing concept about when/how args are passed in, its hard to keep track of and not explicitly showed
 
