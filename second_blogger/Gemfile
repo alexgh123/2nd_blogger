@@ -35,6 +35,9 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 #http://tutorials.jumpstartlab.com/projects/blogger.html#i1:-form-based-workflow ...section: a few gems
 gem "paperclip"
 
+#authenticating users http://tutorials.jumpstartlab.com/projects/blogger.html#i1:-form-based-workflow ...section:authentication
+gem "sorcery"
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
