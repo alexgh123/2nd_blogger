@@ -3,7 +3,12 @@ Rails.application.routes.draw do #tutorial shows this line to look like: Blogger
   root to: 'articles#index'
 
   resources :articles do
-    resources :comments
+    resources :comments, :tags
   end
 
+  resources :tags
+
+  # resources :tags do
+  #   resources :tags
+  # end
 end
