@@ -1,6 +1,8 @@
 class AuthorsController < ApplicationController
   before_action :set_author, only: [:show, :edit, :update, :destroy]
 
+  before_filter :require_login, except: [:new, :create]
+
   # GET /authors
   # GET /authors.json
   def index
@@ -58,6 +60,13 @@ class AuthorsController < ApplicationController
     respond_to do |format|
       format.html { redirect_to authors_url, notice: 'Author was successfully destroyed.' }
       format.json { head :no_content }
+    end
+  end
+
+  def zero_authors_or_authenticated
+    unless Author.count == 0 || current_user
+      redirect_to root_path
+      return false
     end
   end
 
