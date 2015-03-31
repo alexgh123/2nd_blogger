@@ -1,4 +1,4 @@
-class ArticlesController < ApplicationController
+ Usclass ArticlesController < ApplicationController
   include ArticlesHelper
 
   before_filter :require_login, only: [:new, :create, :edit, :update, :destroy]
